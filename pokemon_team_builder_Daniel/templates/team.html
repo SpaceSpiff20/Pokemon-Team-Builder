@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Team Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <h1>Bayesian <span>Pokémon</span> <span class ="teambuilder"> Team Builder </span></h1>
+    <div class="team">
+        <div id="team-container" class="grid-container">
+            <!-- 6 empty slots -->
+            {% for _ in range(6) %}
+            <article class="empty-slot" data-slot="{{ loop.index0 }}">
+                <div class="pokemon-info">
+                    <div class="img">
+                        <img class="img-pokemon" src="https://img.pokemondb.net/sprites/black-white/normal/unown-${createRandomString(1)}.png" alt=" ">
+            
+                    </div>
+                    <div class="details">
+                        <span class="name">Empty Slot</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="suggestions-container" class="overlay">
+        <div class="overlay-content">
+            <h3>Suggestions:</h3>
+            <div class="searchbar">
+                <input type="text" id="search-pokemon" placeholder="Type Pokémon name">
+            </div>
+            <hr />
+            <ul id="suggestions-list"></ul>
+            <button id="close-suggestions">Close</button>
+        </div>
+    </div>
+
+    <div id="abilities-container" class="overlay">
+        <div class="overlay-content">
+            <h3>Choose Ability</h3>
+            <hr>
+            <ul id="abilities-list"></ul>
+            <button id="close-abilities">Close</button>
+        </div>
+    </div>
+
+    <div id="items-container" class="overlay">
+        <div class="overlay-content">
+            <h3>Choose Item</h3>
+            <hr>
+            <ul id="items-list"></ul>
+            <button id="close-items">Close</button>
+        </div>
+    </div>
+
+    <div id="moves-container" class="overlay">
+        <div class="overlay-content">
+            <h3>Choose Moves</h3>
+            <hr>
+            <ul id="moves-list"></ul>
+            <button id="close-moves">Close</button>
+        </div>
+    </div>
+
+    <div id="spreads-container" class="overlay">
+        <div class="overlay-content">
+            <h3>Choose EV Spread</h3>
+            <ul id="spreads-list"></ul>
+            <button id="close-spreads">Close</button>
+        </div>
+    </div>
+
+    <button id="copy-team-btn">Copy Team to Clipboard</button>
+
+
+    <!-- Include jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Pokémon data -->
+
+    <!-- Include your custom JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P';
+    margin: 0;
+    padding: 0;
+    background: url('https://giffiles.alphacoders.com/215/215595.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+hr {
+    height: 4px; /* thickness of the line */
+    background-color: #6d6d6d; /* colour of the line */
+    border: none; /* no border */
+    margin: lef
+  }
+
+hr.divider {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color: #6d6d6d;
+    height: 3px;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+  
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+span {
+    
+    color: #ffcc00;
+}
+
+span.teambuilder {
+    color: #00ff95;
+}
+
+h3 {
+    text-align: left;
+}
+
+button {
+    font-size: x-small;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+article {
+    border: 1px solid #444;
+    padding: 16px;
+    margin: 8px;
+    width: 450px; 
+    background: rgba(50, 50, 50, 0.8);  /* Slight transparent grey fill */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+.searchbar {
+    align-items: center;
+}
+.searchicon {
+    width: 20px;
+}
+.pokemon-info {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.img-pokemon {
+    width: 150px;
+    height: 150px;
+}
+
+.img-item {
+    width: 50px;
+    height: 50px;
+    margin-top: 8px;
+    position: absolute;
+    left: 0%;
+}
+
+.details {
+    flex-grow: 1;
+}
+
+.name {
+    color: white;
+    font-size: larger;
+    padding-bottom: 10px;
+}
+
+
+.type {
+    color: #ffcc00;
+    align-items: center;
+}
+
+.attr {
+    color: #ff9999;
+}
+
+.tera {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+}
+
+.stat {
+    color: #99ccff;
+}
+
+.move {
+    color: #ccffcc;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: -webkit-fill-available;
+}
+
+.empty-slot, .pokemon-slot {
+    border: 4px solid #3e3e3e00;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background-size: 80px 80px;
+    transition: all 0.15s ease-out;
+}
+
+.pokemon-slot:hover, .empty-slot:hover {
+    border: 4px solid #9cbcc4;
+    transform: perspective(150px) translateZ(2px);
+    transition: all 0.15s ease-in;
+}
+
+.overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.overlay-content {
+    background: rgba(50, 50, 50, 0.95);
+    border: 4px solid #6d6d6d;
+    transition: transform 0.2s;
+    background-size: 80px 80px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    overflow-y: auto;  /* Enable scrolling */
+    max-height: 90vh;  /* Make sure the content doesn't overflow the viewport */
+    box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.3);
+}
+
+#suggestions-list, #abilities-list, #items-list, #moves-list, #spreads-list {
+    list-style: none;
+    padding: 0;
+    max-height: 60vh;  /* Limit the height to enable scrolling */
+    overflow-y: auto;
+    height: 100vmax;
+}
+
+#suggestions-list li, #abilities-list li, #items-list li, #moves-list li, #spreads-list li {
+    padding-left: 15px;
+    cursor: pointer;
+    display: flex;
+    transition: background-color 0.2s;
+    align-items: center;
+}
+
+#suggestions-list li:hover, #abilities-list li:hover, #items-list li:hover, #moves-list li:hover, #spreads-list li:hover {
+    background-color: #555;
+}
+
+.details {
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+input {
+    font-family: "Press Start 2P", system-ui;
+    font-size: larger;
+
+} 
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.details .attr {
+    margin: 5px 0;
+    color: #aad4ff; /* Default color */
+}
+
+.details .ability:hover {
+    transition: margin-right 0.5s, color 0.5s;
+    color: #aad4ff; /* Blue for abilities */
+}
+
+
+.details .moves:hover {
+    transition: margin-right 0.5s, color 0.5s;
+    color: #ffaad4; /* Pink for moves */
+}
+
+.img .item:hover {
+    transition: margin-right 0.5s, color 0.5s;
+    color: #ffd700; /* Gold for items */
+}
+
+.details .spread:hover {
+    transition: margin-right 0.5s, color 0.5s;
+    color: #7fff00; /* Chartreuse for EV spread */
+}
+.button {
+    font-family: 'Press Start 2P';
+}
+.img .button {
+    display: block;
+    padding: 5px 10px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+.details .button {
+    display: block;
+    padding: 5px 10px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+button.moves {
+    display: block;
+    padding: 5px 10px;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s;
+    height: 100px;
+}
+
+.details .button:hover {
+    background-color: #555;
+}
+.img .button:hover {
+    background-color: #555;
+}
+
+#suggestions-container, #abilities-container, #items-container, #moves-container, #spreads-container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    padding: 20px;
+    
+}
+
+#search-pokemon {
+    width: -webkit-fill-available;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.suggestion-btn {
+    display: flex;
+    align-items: center;
+}
+
+.suggestion-btn img {
+    margin-right: 10px;
+}
+
+#close-suggestions, #close-abilities, #close-items, #close-moves, #close-spreads {
+    background-color: #df3939c2;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: "Press Start 2P", system-ui;
+    
+}
+
+#close-suggestions:hover, #close-abilities:hover, #close-items:hover, #close-moves:hover, #close-spreads:hover {
+    background-color: #d55555dd;
+}
+
+.moves-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.move-button {
+    font-size: 8px;
+    font-family: "Press Start 2P", system-ui;
+    padding: 5px;
+    text-align: center;
+    background: #444;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.move-button:hover {
+    background-color: #555;
+}
+
+#moves-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#moves-list li span {
+    display: block;
+}
+
+#moves-list li:hover {
+    background-color: #555;
+}
+
+.individualsinmovelist {
+    display: flex;
+}
